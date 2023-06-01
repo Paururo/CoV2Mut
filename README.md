@@ -16,7 +16,7 @@ git clone https://github.com/Paururo/CoV2SpikeMut.git
 
 ## Dependencies
 
-The script depends on several Python packages:
+CoV2SpikeMut depends on the following Python packages:
 
 - Biopython
 - pandas
@@ -24,4 +24,29 @@ The script depends on several Python packages:
 - os
 - logging
 
-Ensure that you have these packages installed in your Python environment.
+Before running the script, please ensure these packages are installed in your Python environment. You can install these packages using pip:
+```
+pip install biopython pandas argparse
+```
+## Usage
+
+To use CoV2SpikeMut, run the following command from your terminal:
+```
+python spike_variant_generator.py -r /path/to/reference.fasta -v /path/to/variants_of_interest.txt -n output_name.fasta -g yes -s yes
+```
+In this command:
+
+    -r specifies the path to the reference sequence FASTA file.
+    -v specifies the path to the text file containing variants of interest.
+    -n specifies the output FASTA filename.
+    -g decides whether to remove gaps ("-") in the sequences ("yes" to remove, "no" to retain).
+    -s decides whether to split the output multi-FASTA file into individual FASTA files ("yes" to split, "no" to retain as single file).
+
+Please replace the paths and filenames with the actual ones on your system.
+## Contributing
+
+We welcome contributions to CoV2SpikeMut! If you have a feature request, bug report, or proposal for improving the script, please open a new issue on GitHub issue tracker.
+
+## Contact
+
+If you have any questions, comments, or would like to get in contact, please open an issue on  GitHub issue tracker.
