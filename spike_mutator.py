@@ -37,6 +37,21 @@ def read_file_tolist(read_file):
 
     return list_positions
 
+def generate_Spike_sequence(reference, list_positions):
+    
+    mutations = {int(pos.split("\t")[0]): pos.split("\t")[1] for pos in list_positions} # Create a dictionary of mutations for faster access
+    spike_fasta = ""
+    for count, base in enumerate(reference, start=1):
+        if 21563 <= count <= 25384:
+            
+            if count in mutations: # Check if this position is in the mutations dictionary
+                spike_fasta += mutations[count]
+            else:
+                spike_fasta += base
+
+    return spike_fasta
+
+
 def parse_args():
     parser = argparse.ArgumentParser(description = "Generate Spike protein sequences with mutations from provided reference sequence and variant list.")
     
