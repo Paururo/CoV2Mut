@@ -4,17 +4,10 @@ import os
 import pandas as pd
 import logging
 logging.basicConfig(level=logging.ERROR, format='%(asctime)s - %(levelname)s - %(message)s')
+
 '''
 Command line: python spike_variant_generator.py -r /ruta/al/archivo/referencia.fasta -v /ruta/al/archivo/variantes_de_interes.txt -n nombre_de_salida.fasta -g Yes -s Yes
 '''
-def parse_args():
-    parser = argparse.ArgumentParser(description = "Generate Spike with mutations")
-    parser.add_argument("-r", dest = "reference_file", required = True, help="Path to the reference file")
-    parser.add_argument("-v", dest = "variant_list", required = True, help="Path to the variant list file")
-    parser.add_argument("-n", dest = "name", required = True, help="Name of the output file")
-    parser.add_argument("-g", dest = "gaps", required = True, choices=['Yes', 'No'], help="Remove gaps or not")
-    parser.add_argument("-s", dest = "split", required = True, choices=['Yes', 'No'], help="Split multifasta file or not")
-    return parser.parse_args()
 
 def read_file(path_to_file):
     if not os.path.isfile(path_to_file):
@@ -82,6 +75,15 @@ def split_multifasta(decision, output_file):
                     outfile.write(line)
             if outfile is not None:
                 outfile.close()
+
+def parse_args():
+    parser = argparse.ArgumentParser(description = "Generate Spike with mutations")
+    parser.add_argument("-r", dest = "reference_file", required = True, help="Path to the reference file")
+    parser.add_argument("-v", dest = "variant_list", required = True, help="Path to the variant list file")
+    parser.add_argument("-n", dest = "name", required = True, help="Name of the output file")
+    parser.add_argument("-g", dest = "gaps", required = True, choices=['Yes', 'No'], help="Remove gaps or not")
+    parser.add_argument("-s", dest = "split", required = True, choices=['Yes', 'No'], help="Split multifasta file or not")
+    return parser.parse_args()
 
 def main():
     args = parse_args()
