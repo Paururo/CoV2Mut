@@ -10,7 +10,16 @@ import logging
 logging.basicConfig(level=logging.ERROR, format='%(asctime)s - %(levelname)s - %(message)s')
 
 def read_referencefasta(path_to_file):
+    if not os.path.isfile(path_to_file):
+        logging.error(f"The file {path_to_file} does not exist.")
+        return None
 
+    with open(path_to_file, 'r') as handle:
+        for record in SeqIO.parse(handle, 'fasta'):
+            return str(record.seq)
+
+    logging.error(f"The file {path_to_file} does not contain any FASTA records.")
+    return None
 
 def parse_args():
     parser = argparse.ArgumentParser(description = "Generate Spike protein sequences with mutations from provided reference sequence and variant list.")
