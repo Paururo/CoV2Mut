@@ -4,7 +4,9 @@ import os
 import pandas as pd
 import logging
 logging.basicConfig(level=logging.ERROR, format='%(asctime)s - %(levelname)s - %(message)s')
-
+'''
+Command line: python spike_variant_generator.py -r /ruta/al/archivo/referencia.fasta -v /ruta/al/archivo/variantes_de_interes.txt -n nombre_de_salida.fasta -g Yes -s Yes
+'''
 def parse_args():
     parser = argparse.ArgumentParser(description = "Generate Spike with mutations")
     parser.add_argument("-r", dest = "reference_file", required = True, help="Path to the reference file")
