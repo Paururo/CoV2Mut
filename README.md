@@ -1,5 +1,6 @@
 # CoV2SpikeMut
 This is a Python script for generating SARS-CoV-2 spike protein sequences with specified mutations, given a reference sequence and a list of variants of interest.
+
 _Spike Variant Generator_
 
 ## About
