@@ -5,9 +5,10 @@ from Bio import SeqIO
 import argparse
 import os
 import subprocess
+import logging
 
 def read_referencefasta(path_to_file):
-    
+
 
 def parse_args():
     parser = argparse.ArgumentParser(description = "Generate Spike protein sequences with mutations from provided reference sequence and variant list.")
