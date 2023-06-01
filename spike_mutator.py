@@ -6,6 +6,9 @@ import argparse
 import os
 import subprocess
 
+def read_referencefasta(path_to_file):
+    
+
 def parse_args():
     parser = argparse.ArgumentParser(description = "Generate Spike protein sequences with mutations from provided reference sequence and variant list.")
     
