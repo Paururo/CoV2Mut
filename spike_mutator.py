@@ -6,6 +6,7 @@ import argparse
 import os
 import subprocess
 import logging
+import pandas as pd
 
 logging.basicConfig(level=logging.ERROR, format='%(asctime)s - %(levelname)s - %(message)s')
 
@@ -20,6 +21,21 @@ def read_referencefasta(path_to_file):
 
     logging.error(f"The file {path_to_file} does not contain any FASTA records.")
     return None
+
+def read_file_tolist(read_file):    
+    if not os.path.isfile(read_file): # Check if file exists
+        logging.error(f"The file {read_file} does not exist.")
+        return None
+
+    try:        
+        df = pd.read_csv(read_file, comment='#', header=None) # Read the file into a DataFrame
+    except pd.errors.EmptyDataError:
+        logging.warning(f"No valid lines found in file {read_file}")
+        return None
+
+    list_positions = df[0].tolist() # Convert the DataFrame to a list
+
+    return list_positions
 
 def parse_args():
     parser = argparse.ArgumentParser(description = "Generate Spike protein sequences with mutations from provided reference sequence and variant list.")
