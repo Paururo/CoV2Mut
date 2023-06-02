@@ -37,11 +37,11 @@ python spike_variant_generator.py -r /path/to/reference.fasta -v /path/to/varian
 ```
 In this command:
 
-    -r specifies the path to the reference sequence FASTA file.
-    -v specifies the path to the text file containing variants of interest.
-    -n specifies the output FASTA filename.
-    -g decides whether to remove gaps ("-") in the sequences ("yes" to remove, "no" to retain).
-    -s decides whether to split the output multi-FASTA file into individual FASTA files ("yes" to split, "no" to retain as single file).
+- `-r` specifies the path to the reference sequence FASTA file.  
+- `-v` specifies the path to the text file containing variants of interest.
+- `-n` specifies the output FASTA filename.
+- `-g` decides whether to remove gaps ("-") in the sequences ("yes" to remove, "no" to retain).
+- `-s` decides whether to split the output multi-FASTA file into individual FASTA files ("yes" to split, "no" to retain as single file).
 
 Please replace the paths and filenames with the actual ones on your system.
 ## Contributing
