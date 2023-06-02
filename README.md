@@ -1,23 +1,23 @@
-# CoV2SpikeMut
+# CoV2Mut
 This is a Python script for generating SARS-CoV-2 spike protein sequences with specified mutations, given a reference sequence and a list of variants of interest.
 
 _Spike Variant Generator_
 
 ## About
 
-`CoV2SpikeMut` is a Python script specifically designed for generating spike protein sequences of SARS-CoV-2, including user-specified mutations. Given a reference sequence and a list of variants of interest, `CoV2SpikeMut` enables researchers to simulate mutated SARS-CoV-2 sequences, contributing to ongoing research in the field of viral genomics and the study of COVID-19.
+`CoV2Mut` is a Python script specifically designed for generating spike protein sequences of SARS-CoV-2, including user-specified mutations. Given a reference sequence and a list of variants of interest, `CoV2Mut` enables researchers to simulate mutated SARS-CoV-2 sequences, contributing to ongoing research in the field of viral genomics and the study of COVID-19.
 
 ## Installation
 
 Clone this repository to your local machine using the following command:
 
 ```
-git clone https://github.com/Paururo/CoV2SpikeMut.git
+git clone https://github.com/Paururo/CoV2Mut.git
 ```
 
 ## Dependencies
 
-CoV2SpikeMut depends on the following Python packages:
+CoV2Mut depends on the following Python packages:
 
 - Biopython
 - pandas
@@ -31,7 +31,7 @@ pip install biopython pandas argparse
 ```
 ## Usage
 
-To use CoV2SpikeMut, run the following command from your terminal:
+To use CoV2Mut, run the following command from your terminal:
 ```
 python spike_variant_generator.py -r /path/to/reference.fasta -v /path/to/variants_of_interest.txt -n output_name.fasta -g yes -s yes
 ```
